@@ -1,3 +1,8 @@
+output "vpc_id" {
+  description = "VPC Id"
+  value       = module.vpc.vpc_id
+}
+
 output "vpc_arn" {
   description = "VPC ARN"
   value       = module.vpc.vpc_arn

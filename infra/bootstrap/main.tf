@@ -5,10 +5,8 @@ terraform {
       version = "~> 5.0"
     }
   }
-}
-
-provider "aws" {
-  region = "ap-southeast-2"
+  backend "s3" {
+  }
 }
 
 module "vpc" {

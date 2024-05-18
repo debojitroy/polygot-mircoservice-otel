@@ -12,6 +12,7 @@
 \#*\#
 **/*.tfstate
 .bkp
+.envbkp
 
 docker-compose.override.yml
 
@@ -61,5 +62,6 @@ test/tracetesting/tracetesting-vars.yaml
 /src/checkoutservice/genproto
 /src/accountingservice/genproto
 /venv/
-/infra/bootstrap/.terraform/**/*
+/infra/**/.terraform/**/*
+/infra/**/*.conf
 /*.bkp
