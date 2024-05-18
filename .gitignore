@@ -10,6 +10,8 @@
 .swp
 .DS_Store
 \#*\#
+**/*.tfstate
+.bkp
 
 docker-compose.override.yml
 
@@ -59,5 +61,5 @@ test/tracetesting/tracetesting-vars.yaml
 /src/checkoutservice/genproto
 /src/accountingservice/genproto
 /venv/
-/infra/.terraform/**/*
+/infra/bootstrap/.terraform/**/*
 /*.bkp
