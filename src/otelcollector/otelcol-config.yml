@@ -33,6 +33,12 @@ exporters:
       endpoint: "http://opensearch:9200"
       tls:
         insecure: true
+  otlphttp/custom:
+    endpoint: http://host.docker.internal:9876
+    compression: none
+    encoding: json
+    tls:
+      insecure: true
 
 processors:
   batch:
@@ -45,12 +51,12 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp, debug, spanmetrics]
+      exporters: [otlp, debug, spanmetrics, otlphttp/custom]
     metrics:
       receivers: [httpcheck/frontendproxy, redis, otlp, spanmetrics]
       processors: [batch]
-      exporters: [otlphttp/prometheus, debug]
+      exporters: [otlphttp/prometheus, debug, otlphttp/custom]
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [opensearch, debug]
+      exporters: [opensearch, debug, otlphttp/custom]
